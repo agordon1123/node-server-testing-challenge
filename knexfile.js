@@ -8,25 +8,20 @@ module.exports = {
     },
     useNullAsDefault: true,
     migrations: {
-      tableName: './data/migrations'
+      directory: './data/migrations'
     }
   },
 
-  // staging: {
-  //   client: 'postgresql',
-  //   connection: {
-  //     database: 'my_db',
-  //     user:     'username',
-  //     password: 'password'
-  //   },
-  //   pool: {
-  //     min: 2,
-  //     max: 10
-  //   },
-  //   migrations: {
-  //     tableName: './data/migrations'
-  //   }
-  // },
+  testing: {
+    client: 'sqlite3',
+    connection: {
+      filename: './data/edu-depts.db3',
+    },
+    useNullAsDefault: true,
+    migrations: {
+      directory: './data/migrations',
+    },
+  },
 
   production: {
     client: 'pg',
@@ -36,8 +31,7 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: './data/migrations'
+      directory: './data/migrations'
     }
   }
-
 };
