@@ -10,8 +10,15 @@ describe('server', () => {
 
     describe('GET /departments', () => {
         it('returns 200 status code', async () => {
-            const response = await request(server).get('/');
+            const response = await request(server).get('/departments');
             expect(response.status).toBe(200);
+        });
+    });
+
+    describe('GET /departments', () => {
+        it('returns an array of departments', async () => {
+            const response = await request(server).get('/departments');
+            // expect().toBe();
         });
     });
 
